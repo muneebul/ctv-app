@@ -3,7 +3,7 @@ export const mockContentData = {
     id: 'hero1',
     title: 'Stranger Things',
     description: 'A thrilling new season of supernatural mysteries and adventures.',
-    image: 'https://placeholder.com/1920x1080',
+    image: 'https://placehold.co/1920x1080',
     type: 'series',
   },
   rails: [
@@ -14,13 +14,13 @@ export const mockContentData = {
         {
           id: 'cw1',
           title: 'The Crown',
-          image: 'https://placeholder.com/300x450',
+          image: 'https://placehold.co/300x450',
           progress: 0.7
         },
         {
           id: 'cw2',
           title: 'Breaking Bad',
-          image: 'https://placeholder.com/300x450',
+          image: 'https://placehold.co/300x450',
           progress: 0.3
         }
       ]
@@ -32,12 +32,12 @@ export const mockContentData = {
         {
           id: 't1',
           title: 'Wednesday',
-          image: 'https://placeholder.com/300x450'
+          image: 'https://placehold.co/300x450'
         },
         {
           id: 't2',
           title: 'The Witcher',
-          image: 'https://placeholder.com/300x450'
+          image: 'https://placehold.co/300x450'
         }
       ]
     },
@@ -48,12 +48,12 @@ export const mockContentData = {
         {
           id: 'r1',
           title: 'Dark',
-          image: 'https://placeholder.com/300x450'
+          image: 'https://placehold.co/300x450'
         },
         {
           id: 'r2',
           title: 'Ozark',
-          image: 'https://placeholder.com/300x450'
+          image: 'https://placehold.co/300x450'
         }
       ]
     }
@@ -70,7 +70,7 @@ export const mockUserData = {
   profile: {
     name: 'John Doe',
     email: 'john@example.com',
-    avatar: 'https://placeholder.com/150x150',
+    avatar: 'https://placehold.co/150x150',
     language: 'English',
     parentalControls: 'PG-13'
   },
