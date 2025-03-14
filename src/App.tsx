@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import Layout from './components/Layout';
 
 
 import { theme } from './styles/theme';
@@ -14,10 +15,12 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <GlobalFocusManager>
+        <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
+      </Layout>
       </GlobalFocusManager>
     </ThemeProvider>
   );
