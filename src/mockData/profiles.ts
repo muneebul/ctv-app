@@ -3,12 +3,12 @@ import { Profile } from '../types';
 export const mockProfiles: Profile[] = [
   {
     id: '1',
-    name: 'John Doe',
+    name: 'Muneeb Gulzar',
     imageUrl: 'https://example.com/profiles/john.jpg'
   },
   {
     id: '2',
-    name: 'Jane Smith',
+    name: 'Moin Smith',
     imageUrl: 'https://example.com/profiles/jane.jpg'
   },
   {
