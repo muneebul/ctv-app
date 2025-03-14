@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Content } from '../../types';
+import type { Content } from '../../types';
 
 interface HeroBannerProps {
   content?: Content;

@@ -13,7 +13,6 @@ const HomePage: React.FC<HomePageProps> = () => {
   const { setFocusMode } = useFocus();
   const [focusedRail, setFocusedRail] = React.useState(-1); // -1 means hero banner is focused
   const [focusedItem, setFocusedItem] = React.useState(0);
-  const { setFocusMode } = useFocus();
 
   React.useEffect(() => {
     setFocusMode('rails');
@@ -63,7 +62,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       onBlur={() => setFocusMode('none')}
     >
       <HeroBanner
-        content={featuredContent}
+        content={featuredContent || undefined}
         isFocused={focusedRail === -1}
         data-testid="hero-banner"
       />

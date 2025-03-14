@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useFocus } from '../../utils/focusManager';
 import ProfileSection from '../../components/Settings/ProfileSection';
 import SubscriptionSection from '../../components/Settings/SubscriptionSection';
 import DeviceSection from '../../components/Settings/DeviceSection';
@@ -82,14 +83,8 @@ const SettingsPage: React.FC<SettingsPageProps> = () => {
       tabIndex={0}
       onKeyDown={handleKeyDown}
       data-testid="settings-container"
-      onFocus={() => {
-        const { setFocusMode } = useFocus();
-        setFocusMode('settings');
-      }}
-      onBlur={() => {
-        const { setFocusMode } = useFocus();
-        setFocusMode('none');
-      }}
+      onFocus={() => setFocusMode('settings')}
+      onBlur={() => setFocusMode('none')}
     >
       <Title>Settings</Title>
       <ProfileSection
