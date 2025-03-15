@@ -42,7 +42,7 @@ A Connected TV (CTV) streaming application built with React, featuring a 10-foot
 2. Valid Samsung Developer Account
 3. Developer Mode enabled on your Tizen TV
 
-## Getting Started
+## Getting Started on Browser
 
 1. Install dependencies:
 ```bash
