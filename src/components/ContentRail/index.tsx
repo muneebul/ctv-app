@@ -17,7 +17,7 @@ const ContentRail: React.FC<ContentRailProps> = ({
   focusedItemIndex
 }) => {
   return (
-    <Container>
+    <Container isFocused={isFocused}>
       <Title>{title}</Title>
       <ItemsContainer>
         {contents.map((content, index) => (
@@ -34,8 +34,10 @@ const ContentRail: React.FC<ContentRailProps> = ({
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<{ isFocused?: boolean }>`
   margin: 20px 0;
+  border: ${({ isFocused, theme }) =>
+    isFocused ? `2px solid ${theme.colors.primary}` : 'none'};
 `;
 
 const Title = styled.h2`
@@ -52,10 +54,12 @@ const ItemsContainer = styled.div`
 const ContentItem = styled.div<{ isFocused: boolean }>`
   flex-shrink: 0;
   width: 200px;
-  transform: scale(${({ isFocused }) => (isFocused ? 1.1 : 1)});
-  transition: transform 0.3s ease;
+  transform: scale(${({ isFocused }) => (isFocused ? 1.02 : 1)});
+  transition: all 0.3s ease;
   border: ${({ isFocused, theme }) =>
     isFocused ? `2px solid ${theme.colors.primary}` : 'none'};
+  padding: 8px;
+  border-radius: 4px;
 `;
 
 const Thumbnail = styled.img`

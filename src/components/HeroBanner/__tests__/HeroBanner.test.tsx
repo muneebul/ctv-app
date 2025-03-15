@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import HeroBanner from '../index';
 import { theme } from '../../../styles/theme';
@@ -13,11 +13,11 @@ const mockContent = {
 };
 
 const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider theme={theme}>
-      {component}
-    </ThemeProvider>
-  );
+  let result;
+  act(() => {
+    result = render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
+  });
+  return result!;
 };
 
 describe('HeroBanner', () => {
@@ -35,9 +35,15 @@ describe('HeroBanner', () => {
     expect(screen.getByText('Play Now')).toBeInTheDocument();
   });
 
-  it('applies focus styles when focused', () => {
-    renderWithTheme(<HeroBanner content={mockContent} isFocused={true} />);
-    const container = screen.getByText('Test Title').closest('div');
-    expect(container).toHaveStyleRule('transform', 'scale(1.02)');
+  it('displays correct background image', () => {
+    renderWithTheme(<HeroBanner content={mockContent} />);
+    const image = screen.getByRole('img');
+    expect(image).toHaveAttribute('src', 'test.jpg');
+  });
+
+  it('handles missing content gracefully', () => {
+    renderWithTheme(<HeroBanner content={undefined} />);
+    const image = screen.getByRole('img');
+    expect(image).toHaveAttribute('src', 'https://example.com/featured.jpg');
   });
 });

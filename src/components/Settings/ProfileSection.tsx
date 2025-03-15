@@ -124,10 +124,14 @@ const ProfileItem = styled.div<{ isFocused: boolean }>`
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 8px;
   cursor: pointer;
-  transform: scale(${({ isFocused }) => (isFocused ? 1.1 : 1)});
+  transform: scale(${({ isFocused }) => (isFocused ? 1.02 : 1)});
   border: ${({ isFocused, theme }) =>
     isFocused ? `2px solid ${theme.colors.primary}` : 'none'};
   transition: all 0.3s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primaryHover};
+  }
 `;
 
 const SmallProfileImage = styled.img`
@@ -140,6 +144,7 @@ const SmallProfileImage = styled.img`
 const SmallProfileName = styled.p`
   color: ${({ theme }) => theme.colors.text};
   font-size: 14px;
+  text-align: center;
 `;
 
 export default ProfileSection;

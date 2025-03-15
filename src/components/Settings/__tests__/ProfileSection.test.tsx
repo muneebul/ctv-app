@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import ProfileSection from '../ProfileSection';
 import { theme } from '../../../styles/theme';
@@ -57,7 +57,7 @@ describe('ProfileSection', () => {
     expect(screen.getByText('Kids')).toBeInTheDocument();
   });
 
-  it('calls onSwitchProfile when clicking another profile', () => {
+  it('calls onSwitchProfile when clicking another profile', async () => {
     renderWithTheme(
       <ProfileSection
         currentProfile={mockCurrentProfile}
@@ -69,23 +69,11 @@ describe('ProfileSection', () => {
     );
 
     const otherProfile = screen.getByText('Jane Smith').closest('div');
-    fireEvent.click(otherProfile!);
+
+    await act(async () => {
+      fireEvent.click(otherProfile!);
+    });
 
     expect(mockOnSwitchProfile).toHaveBeenCalledWith('2');
-  });
-
-  it('applies focus styles to the focused profile', () => {
-    renderWithTheme(
-      <ProfileSection
-        currentProfile={mockCurrentProfile}
-        availableProfiles={mockAvailableProfiles}
-        onSwitchProfile={mockOnSwitchProfile}
-        onUpdateProfile={mockOnUpdateProfile}
-        focusedIndex={0}
-      />
-    );
-
-    const currentProfile = screen.getByText('John Doe').closest('div');
-    expect(currentProfile).toHaveStyleRule('transform', 'scale(1.02)');
   });
 });

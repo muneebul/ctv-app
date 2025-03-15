@@ -78,8 +78,8 @@ const PlayButton = styled.button<{ isFocused: boolean }>`
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transform: scale(${({ isFocused }) => (isFocused ? 1.1 : 1)});
-  transition: transform 0.3s ease;
+  transform: scale(${({ isFocused }) => (isFocused ? 1.02 : 1)});
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};

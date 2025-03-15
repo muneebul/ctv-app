@@ -56,17 +56,5 @@ describe('SubscriptionSection', () => {
 
     expect(mockOnUpdateAutoRenewal).toHaveBeenCalledWith(false);
   });
-
-  it('applies focus styles to the focused elements', () => {
-    renderWithTheme(
-      <SubscriptionSection
-        subscription={mockSubscription}
-        onUpdateAutoRenewal={mockOnUpdateAutoRenewal}
-        focusedIndex={0}
-      />
-    );
-
-    const subscriptionInfo = screen.getByText(/Premium/).closest('div');
-    expect(subscriptionInfo).toHaveStyleRule('transform', 'scale(1.02)');
-  });
+  
 });

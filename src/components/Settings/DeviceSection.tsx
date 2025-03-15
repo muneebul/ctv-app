@@ -103,15 +103,15 @@ const Actions = styled.div`
 
 const ActionButton = styled.button<{ isFocused: boolean }>`
   padding: 8px 16px;
-  background: ${({ theme, isFocused }) =>
-    isFocused ? theme.colors.primary : theme.colors.buttonBackground};
+  background: ${({ theme }) => theme.colors.buttonBackground};
   color: ${({ theme }) => theme.colors.buttonText};
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transform: scale(${({ isFocused }) => (isFocused ? 1.02 : 1)});
   transition: all 0.3s ease;
 
-  &:hover {
+  &:hover, &:focus {
     background: ${({ theme }) => theme.colors.primaryHover};
   }
 `;

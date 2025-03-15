@@ -76,7 +76,7 @@ const ExpiryDate = styled.p`
   margin-bottom: 20px;
 `;
 
-const Value = styled.span<{ status?: 'active' | 'expired' }>`
+const Value = styled.span<{ status?: string }>`
   color: ${({ theme, status }) =>
     status === 'active'
       ? theme.colors.success
@@ -94,7 +94,7 @@ const RenewalToggle = styled.button<{ isFocused: boolean }>`
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transform: scale(${({ isFocused }) => (isFocused ? 1.1 : 1)});
+  transform: scale(${({ isFocused }) => (isFocused ? 1.02 : 1)});
   border: ${({ isFocused, theme }) =>
     isFocused ? `2px solid ${theme.colors.primary}` : 'none'};
   transition: all 0.3s ease;

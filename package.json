@@ -24,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:webos": "react-scripts build && cp -r webos-meta/* build/ && cd build && /usr/local/share/webOS_Signage_SDK/CLI/bin/ares-package --no-minify .",
+    "build:tizen": "react-scripts build && cp -r tizen-meta/* build/ && cd build && tizen package -t wgt -s YOUR_CERTIFICATE -o ."
   },
   "eslintConfig": {
     "extends": [
