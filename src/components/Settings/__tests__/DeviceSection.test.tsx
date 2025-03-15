@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import DeviceSection from '../DeviceSection';
 import { theme } from '../../../styles/theme';
@@ -24,10 +24,7 @@ const mockOnRemoveDevice = jest.fn();
 const mockOnRenameDevice = jest.fn();
 
 const renderWithTheme = (component: React.ReactElement) => {
-  let result;
-  act(() => {
-    result = render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
-  });
+  let result = render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
   return result!;
 };
 

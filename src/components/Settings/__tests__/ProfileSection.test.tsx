@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import ProfileSection from '../ProfileSection';
 import { theme } from '../../../styles/theme';
@@ -70,9 +70,7 @@ describe('ProfileSection', () => {
 
     const otherProfile = screen.getByText('Jane Smith').closest('div');
 
-    await act(async () => {
-      fireEvent.click(otherProfile!);
-    });
+    fireEvent.click(otherProfile!);
 
     expect(mockOnSwitchProfile).toHaveBeenCalledWith('2');
   });

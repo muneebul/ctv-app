@@ -26,7 +26,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:webos": "react-scripts build && cp -r webos-meta/* build/ && cd build && /usr/local/share/webOS_Signage_SDK/CLI/bin/ares-package --no-minify .",
-    "build:tizen": "react-scripts build && cp -r tizen-meta/* build/ && cd build && tizen package -t wgt -s YOUR_CERTIFICATE -o ."
+    "build:tizen": "react-scripts build && cp -r tizen-meta/* build/ && cd build && tizen package -t wgt -s YOUR_CERTIFICATE -o .",
+    "deploy:webos": "ares-install --device YOUR_DEVICE build/*.ipk && ares-launch --device YOUR_DEVICE com.company.ctv.streaming.app",
+    "deploy:tizen": "tizen install -n build/*.wgt -t YOUR_DEVICE && tizen run -p com.company.ctv.streaming.app -t YOUR_DEVICE"
   },
   "eslintConfig": {
     "extends": [

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import HeroBanner from '../index';
 import { theme } from '../../../styles/theme';
@@ -13,10 +13,7 @@ const mockContent = {
 };
 
 const renderWithTheme = (component: React.ReactElement) => {
-  let result;
-  act(() => {
-    result = render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
-  });
+  let result = render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
   return result!;
 };
 

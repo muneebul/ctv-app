@@ -2,6 +2,9 @@
 
 A Connected TV (CTV) streaming application built with React, featuring a 10-foot UI experience optimized for TV viewing and navigation.
 
+# Demo
+![Demo Video](assets/demo.gif)
+
 ## Features
 
 - Home page with Hero Banner and content rails
@@ -19,6 +22,25 @@ A Connected TV (CTV) streaming application built with React, featuring a 10-foot
 - React Router v6
 - Styled Components
 - Testing Library
+
+## Prerequisites
+
+### Development Environment Setup
+- Node.js and npm (latest LTS version recommended)
+- WebOS CLI (Install from http://webostv.developer.lge.com/)
+- Tizen Studio and Tizen CLI (Install from https://developer.tizen.org/development/tizen-studio/download)
+
+## Platform-Specific Requirements
+
+### WebOS
+1. WebOS SDK and CLI tools
+2. Valid WebOS TV Developer Account
+3. Developer Mode enabled on your WebOS TV
+
+### Tizen
+1. Tizen Studio or CLI with TV extensions like certificate
+2. Valid Samsung Developer Account
+3. Developer Mode enabled on your Tizen TV
 
 ## Getting Started
 
@@ -59,6 +81,36 @@ npm run build
 - Add error boundaries
 - Implement proper loading states
 - Add more accessibility features
+
+## Building and Deployment
+
+### Building for WebOS
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create WebOS package:
+   ```bash
+   npm run build:webos
+   ```
+3. Deploy to WebOS TV:
+   ```bash
+   npm run deploy:webos
+   ```
+
+### Building for Tizen
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create Tizen package:
+   ```bash
+   npm run build:tizen
+   ```
+3. Deploy to Tizen TV:
+   ```bash
+   npm run deploy:tizen
+   ```
 
 ## Project Structure
 
